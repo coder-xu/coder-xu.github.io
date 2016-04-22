@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>My Blog</title>
+  <title>Xu&#39;s Blog</title>
   
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-21T16:10:41.645Z</updated>
+  <updated>2016-04-22T03:26:09.164Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>Peter-xu</name>
+    <name>Peter Xu</name>
     
   </author>
   
@@ -20,14 +20,12 @@
     <link href="http://yoursite.com/2016/04/20/Hadoop%E4%B9%8B%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E7%8E%AF%E5%A2%83%E7%9A%84%E6%90%AD%E5%BB%BA/"/>
     <id>http://yoursite.com/2016/04/20/Hadoop之伪分布式环境的搭建/</id>
     <published>2016-04-20T14:03:54.000Z</published>
-    <updated>2016-04-21T16:10:41.645Z</updated>
+    <updated>2016-04-22T03:26:09.164Z</updated>
     
-    <content type="html">&lt;hr&gt;
-&lt;h2 id=&quot;前期工具准备&quot;&gt;&lt;a href=&quot;#前期工具准备&quot; class=&quot;headerlink&quot; title=&quot;前期工具准备&quot;&gt;&lt;/a&gt;前期工具准备&lt;/h2&gt;&lt;ol&gt;
+    <content type="html">&lt;h2 id=&quot;前期工具准备&quot;&gt;&lt;a href=&quot;#前期工具准备&quot; class=&quot;headerlink&quot; title=&quot;前期工具准备&quot;&gt;&lt;/a&gt;前期工具准备&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;jdk：jdk-7u67-linux-x64.tar.gz&lt;/li&gt;
 &lt;li&gt;hadoop：hadoop-2.5.0.tar.gz &lt;a href=&quot;http://archive.apache.org/dist/hadoop/common/hadoop-2.5.0/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;下载地址:http://archive.apache.org/dist/hadoop/common/hadoop-2.5.0&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;hr&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h2 id=&quot;环境准备-root用户&quot;&gt;&lt;a href=&quot;#环境准备-root用户&quot; class=&quot;headerlink&quot; title=&quot;环境准备(root用户)&quot;&gt;&lt;/a&gt;环境准备(root用户)&lt;/h2&gt;&lt;p&gt;1.修改主机名&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vi /etc/sysconfig/network&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -98,15 +96,17 @@ PATH=$PATH:$JAVA_HOME/bin
     
     <summary type="html">
     
-      &lt;hr&gt;
-&lt;h2 id=&quot;前期工具准备&quot;&gt;&lt;a href=&quot;#前期工具准备&quot; class=&quot;headerlink&quot; title=&quot;前期工具准备&quot;&gt;&lt;/a&gt;前期工具准备&lt;/h2&gt;&lt;ol&gt;
+      &lt;h2 id=&quot;前期工具准备&quot;&gt;&lt;a href=&quot;#前期工具准备&quot; class=&quot;headerlink&quot; title=&quot;前期工具准备&quot;&gt;&lt;/a&gt;前期工具准备&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;jdk：jdk-7u67-linux-x64.tar.gz&lt;/li&gt;
 &lt;li&gt;hadoop：hadoop-2.5.0.tar.gz &lt;a href=&quot;http://archive.apache.org/dist/hadoop/common/hadoop-2.5.0/&quot;&gt;下载地址:http://archive.apache.org/dist/hadoop/common/hadoop-2.5.0&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;hr&gt;
     
     </summary>
     
+      <category term="Hadoop学习" scheme="http://yoursite.com/categories/Hadoop%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="Hadoop" scheme="http://yoursite.com/tags/Hadoop/"/>
     
   </entry>
   

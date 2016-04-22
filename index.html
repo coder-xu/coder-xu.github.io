@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion">
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -70,7 +70,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="My Blog" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="Xu's Blog" type="application/atom+xml" />
 
 
 
@@ -82,22 +82,22 @@
 
 
 
-<meta name="description">
+<meta name="description" content="那些硬着头皮去做的事，终将让你长进。">
 <meta property="og:type" content="website">
-<meta property="og:title" content="My Blog">
+<meta property="og:title" content="Xu's Blog">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="My Blog">
-<meta property="og:description">
+<meta property="og:site_name" content="Xu's Blog">
+<meta property="og:description" content="那些硬着头皮去做的事，终将让你长进。">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My Blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Xu's Blog">
+<meta name="twitter:description" content="那些硬着头皮去做的事，终将让你长进。">
 
 
 
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Muse',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -108,7 +108,7 @@
   };
 </script>
 
-  <title> My Blog </title>
+  <title> Xu's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -141,7 +141,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">My Blog</span>
+      <span class="site-title">Xu's Blog</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -173,6 +173,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -189,6 +199,16 @@
               <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
             
             标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            公益404
           </a>
         </li>
       
@@ -251,6 +271,25 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Hadoop学习/" itemprop="url" rel="index">
+                    <span itemprop="name">Hadoop学习</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
@@ -274,12 +313,10 @@
 
       
         
-          <hr>
-<h2 id="前期工具准备"><a href="#前期工具准备" class="headerlink" title="前期工具准备"></a>前期工具准备</h2><ol>
+          <h2 id="前期工具准备"><a href="#前期工具准备" class="headerlink" title="前期工具准备"></a>前期工具准备</h2><ol>
 <li>jdk：jdk-7u67-linux-x64.tar.gz</li>
 <li>hadoop：hadoop-2.5.0.tar.gz <a href="http://archive.apache.org/dist/hadoop/common/hadoop-2.5.0/">下载地址:http://archive.apache.org/dist/hadoop/common/hadoop-2.5.0</a></li>
 </ol>
-<hr>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/20/Hadoop之伪分布式环境的搭建/#more" rel="contents">
               阅读全文 &raquo;
@@ -440,10 +477,10 @@
       <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/default_avatar.jpg"
-               alt="Peter-xu" />
-          <p class="site-author-name" itemprop="name">Peter-xu</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+               src="/images/avatar.png"
+               alt="Peter Xu" />
+          <p class="site-author-name" itemprop="name">Peter Xu</p>
+          <p class="site-description motion-element" itemprop="description">那些硬着头皮去做的事，终将让你长进。</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
@@ -454,7 +491,21 @@
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -499,7 +550,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Peter-xu</span>
+  <span class="author" itemprop="copyrightHolder">Peter Xu</span>
 </div>
 
 <div class="powered-by">
@@ -509,7 +560,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
+    NexT.Mist
   </a>
 </div>
 
