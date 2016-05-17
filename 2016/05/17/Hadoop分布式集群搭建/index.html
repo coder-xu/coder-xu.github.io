@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Hadoop," />
 
 
 
@@ -82,15 +82,31 @@
 
 
 
-<meta name="description" content="那些硬着头皮去做的事，终将让你长进。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Xu's Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="##一、集群规划    –需求        -作业量（测试）　–基准测试　　–基本测试　  –ganglia  –cacti        -容量　
+*　选服务器（CPU/内存/磁盘）
+        CPU: 2核　[４核]　[８核]　16核==2 * 8核   
+        内存:  16G  [32G]  64G 
+        磁盘： 500G  1T  [2T]">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hadoop分布式集群搭建">
+<meta property="og:url" content="http://yoursite.com/2016/05/17/Hadoop分布式集群搭建/index.html">
 <meta property="og:site_name" content="Xu's Blog">
-<meta property="og:description" content="那些硬着头皮去做的事，终将让你长进。">
+<meta property="og:description" content="##一、集群规划    –需求        -作业量（测试）　–基准测试　　–基本测试　  –ganglia  –cacti        -容量　
+*　选服务器（CPU/内存/磁盘）
+        CPU: 2核　[４核]　[８核]　16核==2 * 8核   
+        内存:  16G  [32G]  64G 
+        磁盘： 500G  1T  [2T]">
+<meta property="og:image" content="http://static.zybuluo.com/Peter-xu/nx7by8pi3ene6y07fueoy1e4/20160506193301.png">
+<meta property="og:image" content="http://static.zybuluo.com/Peter-xu/qs412kh78j2uqoszon4gzvgm/20160506193749.png">
+<meta property="og:updated_time" content="2016-05-17T13:08:01.011Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xu's Blog">
-<meta name="twitter:description" content="那些硬着头皮去做的事，终将让你长进。">
+<meta name="twitter:title" content="Hadoop分布式集群搭建">
+<meta name="twitter:description" content="##一、集群规划    –需求        -作业量（测试）　–基准测试　　–基本测试　  –ganglia  –cacti        -容量　
+*　选服务器（CPU/内存/磁盘）
+        CPU: 2核　[４核]　[８核]　16核==2 * 8核   
+        内存:  16G  [32G]  64G 
+        磁盘： 500G  1T  [2T]">
+<meta name="twitter:image" content="http://static.zybuluo.com/Peter-xu/nx7by8pi3ene6y07fueoy1e4/20160506193301.png">
 
 
 
@@ -108,7 +124,7 @@
   };
 </script>
 
-  <title> Xu's Blog </title>
+  <title> Hadoop分布式集群搭建 | Xu's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -139,9 +155,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -258,9 +272,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -280,10 +294,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/05/17/Hadoop分布式集群搭建/" itemprop="url">
-                  Hadoop分布式集群搭建
-                </a>
+                Hadoop分布式集群搭建
               
             
           </h1>
@@ -351,9 +362,7 @@
       
 
       
-        
-          
-            <p>##一、集群规划<br>    –需求<br>        -作业量（测试）　–基准测试　　–基本测试　  –ganglia  –cacti<br>        -容量　</p>
+        <p>##一、集群规划<br>    –需求<br>        -作业量（测试）　–基准测试　　–基本测试　  –ganglia  –cacti<br>        -容量　</p>
 <pre><code>*　选服务器（CPU/内存/磁盘）
         CPU: 2核　[４核]　[８核]　16核==2 * 8核   
         内存:  16G  [32G]  64G 
@@ -441,168 +450,57 @@ $ ssh-copy-id xu@hadoop-senior03
 <p>（6）测试<br>HDFS　上传　查看<br>    <img src="http://static.zybuluo.com/Peter-xu/nx7by8pi3ene6y07fueoy1e4/20160506193301.png" alt="20160506193301.png-12.4kB"></p>
 <p>YARN　wordcount<br>    <img src="http://static.zybuluo.com/Peter-xu/qs412kh78j2uqoszon4gzvgm/20160506193749.png" alt="20160506193749.png-39.4kB"></p>
 
-          
-        
       
     </div>
     
     <div>
       
+        
+      
     </div>
 
     <div>
+      
+        
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/20/Hadoop之伪分布式环境的搭建/" itemprop="url">
-                  Hadoop之伪分布式环境的搭建
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-20T22:03:54+08:00" content="2016-04-20">
-              2016-04-20
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Hadoop学习/" itemprop="url" rel="index">
-                    <span itemprop="name">Hadoop学习</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/20/Hadoop之伪分布式环境的搭建/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/20/Hadoop之伪分布式环境的搭建/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-		  
-		  
-          
-          
-
+            <a href="/tags/Hadoop/" rel="tag">#Hadoop</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h2 id="前期工具准备"><a href="#前期工具准备" class="headerlink" title="前期工具准备"></a>前期工具准备</h2><ol>
-<li>jdk：jdk-7u67-linux-x64.tar.gz</li>
-<li>hadoop：hadoop-2.5.0.tar.gz <a href="http://archive.apache.org/dist/hadoop/common/hadoop-2.5.0/">下载地址:http://archive.apache.org/dist/hadoop/common/hadoop-2.5.0</a></li>
-</ol>
-<h2 id="环境准备-root用户"><a href="#环境准备-root用户" class="headerlink" title="环境准备(root用户)"></a>环境准备(root用户)</h2><p>1.修改主机名</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysconfig/network</span><br></pre></td></tr></table></figure>
-<pre><code>HOSTNAME=hadoop-senior
-</code></pre><p>2.创建普通用户xu （Hadoop用此用户去操作）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost /]# useradd xu</span><br><span class="line">[root@localhost /]# echo 123456 | passwd --stdin xu</span><br></pre></td></tr></table></figure>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/20/Hadoop之伪分布式环境的搭建/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/20/Hadoop之伪分布式环境的搭建/" rel="next" title="Hadoop之伪分布式环境的搭建">
+                <i class="fa fa-chevron-left"></i> Hadoop之伪分布式环境的搭建
+              </a>
+            
           </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
 
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -610,6 +508,14 @@ $ ssh-copy-id xu@hadoop-senior03
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/17/Hadoop分布式集群搭建/"
+           data-title="Hadoop分布式集群搭建" data-url="http://yoursite.com/2016/05/17/Hadoop分布式集群搭建/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -629,8 +535,17 @@ $ ssh-copy-id xu@hadoop-senior03
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -687,6 +602,17 @@ $ ssh-copy-id xu@hadoop-senior03
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -788,6 +714,10 @@ $ ssh-copy-id xu@hadoop-senior03
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
