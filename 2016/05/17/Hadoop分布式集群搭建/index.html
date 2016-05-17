@@ -82,7 +82,10 @@
 
 
 
-<meta name="description" content="##一、集群规划    –需求        -作业量（测试）　–基准测试　　–基本测试　  –ganglia  –cacti        -容量　
+<meta name="description" content="一、集群规划--需求
+    -作业量（测试）　--基准测试　　--基本测试　  --ganglia  --cacti 
+    -容量　
+
 *　选服务器（CPU/内存/磁盘）
         CPU: 2核　[４核]　[８核]　16核==2 * 8核   
         内存:  16G  [32G]  64G 
@@ -91,17 +94,23 @@
 <meta property="og:title" content="Hadoop分布式集群搭建">
 <meta property="og:url" content="http://yoursite.com/2016/05/17/Hadoop分布式集群搭建/index.html">
 <meta property="og:site_name" content="Xu's Blog">
-<meta property="og:description" content="##一、集群规划    –需求        -作业量（测试）　–基准测试　　–基本测试　  –ganglia  –cacti        -容量　
+<meta property="og:description" content="一、集群规划--需求
+    -作业量（测试）　--基准测试　　--基本测试　  --ganglia  --cacti 
+    -容量　
+
 *　选服务器（CPU/内存/磁盘）
         CPU: 2核　[４核]　[８核]　16核==2 * 8核   
         内存:  16G  [32G]  64G 
         磁盘： 500G  1T  [2T]">
 <meta property="og:image" content="http://static.zybuluo.com/Peter-xu/nx7by8pi3ene6y07fueoy1e4/20160506193301.png">
 <meta property="og:image" content="http://static.zybuluo.com/Peter-xu/qs412kh78j2uqoszon4gzvgm/20160506193749.png">
-<meta property="og:updated_time" content="2016-05-17T13:22:35.773Z">
+<meta property="og:updated_time" content="2016-05-17T13:25:35.987Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop分布式集群搭建">
-<meta name="twitter:description" content="##一、集群规划    –需求        -作业量（测试）　–基准测试　　–基本测试　  –ganglia  –cacti        -容量　
+<meta name="twitter:description" content="一、集群规划--需求
+    -作业量（测试）　--基准测试　　--基本测试　  --ganglia  --cacti 
+    -容量　
+
 *　选服务器（CPU/内存/磁盘）
         CPU: 2核　[４核]　[８核]　16核==2 * 8核   
         内存:  16G  [32G]  64G 
@@ -362,8 +371,11 @@
       
 
       
-        <p>##一、集群规划<br>    –需求<br>        -作业量（测试）　–基准测试　　–基本测试　  –ganglia  –cacti<br>        -容量　</p>
-<pre><code>*　选服务器（CPU/内存/磁盘）
+        <h2 id="一、集群规划"><a href="#一、集群规划" class="headerlink" title="一、集群规划"></a>一、集群规划</h2><pre><code>--需求
+    -作业量（测试）　--基准测试　　--基本测试　  --ganglia  --cacti 
+    -容量　
+
+*　选服务器（CPU/内存/磁盘）
         CPU: 2核　[４核]　[８核]　16核==2 * 8核   
         内存:  16G  [32G]  64G 
         磁盘： 500G  1T  [2T] 　　 
@@ -384,11 +396,9 @@
 * DELL[R420/R620/R720] 　浪潮　IBM   HP　　　
 * 操作系统  Centos6+
 </code></pre><a id="more"></a>
-<p>##二、Hadoop集群搭建</p>
-<p>###2.1 实验环境规划</p>
-<p>HDFS　　namenode　datanode　secondarynamenode<br>YARN　　resourcemanager　nodemanager<br>history　　historyserver   </p>
+<h2 id="二、Hadoop集群搭建"><a href="#二、Hadoop集群搭建" class="headerlink" title="二、Hadoop集群搭建"></a>二、Hadoop集群搭建</h2><h3 id="2-1-实验环境规划"><a href="#2-1-实验环境规划" class="headerlink" title="2.1 实验环境规划"></a>2.1 实验环境规划</h3><p>HDFS　　namenode　datanode　secondarynamenode<br>YARN　　resourcemanager　nodemanager<br>history　　historyserver   </p>
 <p>发布角色<br>hadoop-senior：　　　namenode　　datanode　　nodemanager<br>hadoop-senior02：　　resourcemanager　　datanode　　nodemanager<br>hadoop-senior03：　　secondarynamenode　　datanode　　nodemanager　　historyserver</p>
-<p>###2.2 开始部署<br>（1）准备系统软件<br>　　Centos6.4     apache: hadoop   jdk<br>（2）准备系统环境</p>
+<h3 id="2-2-开始部署"><a href="#2-2-开始部署" class="headerlink" title="2.2 开始部署"></a>2.2 开始部署</h3><p>（1）准备系统软件<br>　　Centos6.4     apache: hadoop   jdk<br>（2）准备系统环境</p>
 <p>(a)关闭selinux和防火墙　　(root)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># vi /etc/sysconfig/selinux</span><br><span class="line">	SELINUX=disabled</span><br><span class="line"># chkconfig iptables off</span><br><span class="line"># service iptables stop</span><br></pre></td></tr></table></figure></p>
 <p>(b)固定主机名　　(root)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># vi /etc/sysconfig/network</span><br><span class="line">	HOSTNAME=hadoop-senior    三台不一样</span><br></pre></td></tr></table></figure></p>
 <p>(c)添加hosts文件             (root)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># vi /etc/hosts		</span><br><span class="line">	192.168.17.128          hadoop-senior </span><br><span class="line">	192.168.17.129          hadoop-senior02 </span><br><span class="line">	192.168.17.130          hadoop-senior03</span><br></pre></td></tr></table></figure></p>
@@ -610,7 +620,7 @@ $ ssh-copy-id xu@hadoop-senior03
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、集群规划"><span class="nav-number">1.</span> <span class="nav-text">一、集群规划</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Hadoop集群搭建"><span class="nav-number">2.</span> <span class="nav-text">二、Hadoop集群搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-实验环境规划"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 实验环境规划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-开始部署"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 开始部署</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-05-17T13:22:35.773Z</updated>
+  <updated>2016-05-17T13:25:35.987Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,10 +20,13 @@
     <link href="http://yoursite.com/2016/05/17/Hadoop%E5%88%86%E5%B8%83%E5%BC%8F%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/"/>
     <id>http://yoursite.com/2016/05/17/Hadoop分布式集群搭建/</id>
     <published>2016-05-17T13:07:54.000Z</published>
-    <updated>2016-05-17T13:22:35.773Z</updated>
+    <updated>2016-05-17T13:25:35.987Z</updated>
     
-    <content type="html">&lt;p&gt;##一、集群规划&lt;br&gt;    –需求&lt;br&gt;        -作业量（测试）　–基准测试　　–基本测试　  –ganglia  –cacti&lt;br&gt;        -容量　&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;*　选服务器（CPU/内存/磁盘）
+    <content type="html">&lt;h2 id=&quot;一、集群规划&quot;&gt;&lt;a href=&quot;#一、集群规划&quot; class=&quot;headerlink&quot; title=&quot;一、集群规划&quot;&gt;&lt;/a&gt;一、集群规划&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;--需求
+    -作业量（测试）　--基准测试　　--基本测试　  --ganglia  --cacti 
+    -容量　
+
+*　选服务器（CPU/内存/磁盘）
         CPU: 2核　[４核]　[８核]　16核==2 * 8核   
         内存:  16G  [32G]  64G 
         磁盘： 500G  1T  [2T] 　　 
@@ -44,11 +47,9 @@
 * DELL[R420/R620/R720] 　浪潮　IBM   HP　　　
 * 操作系统  Centos6+
 &lt;/code&gt;&lt;/pre&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;##二、Hadoop集群搭建&lt;/p&gt;
-&lt;p&gt;###2.1 实验环境规划&lt;/p&gt;
-&lt;p&gt;HDFS　　namenode　datanode　secondarynamenode&lt;br&gt;YARN　　resourcemanager　nodemanager&lt;br&gt;history　　historyserver   &lt;/p&gt;
+&lt;h2 id=&quot;二、Hadoop集群搭建&quot;&gt;&lt;a href=&quot;#二、Hadoop集群搭建&quot; class=&quot;headerlink&quot; title=&quot;二、Hadoop集群搭建&quot;&gt;&lt;/a&gt;二、Hadoop集群搭建&lt;/h2&gt;&lt;h3 id=&quot;2-1-实验环境规划&quot;&gt;&lt;a href=&quot;#2-1-实验环境规划&quot; class=&quot;headerlink&quot; title=&quot;2.1 实验环境规划&quot;&gt;&lt;/a&gt;2.1 实验环境规划&lt;/h3&gt;&lt;p&gt;HDFS　　namenode　datanode　secondarynamenode&lt;br&gt;YARN　　resourcemanager　nodemanager&lt;br&gt;history　　historyserver   &lt;/p&gt;
 &lt;p&gt;发布角色&lt;br&gt;hadoop-senior：　　　namenode　　datanode　　nodemanager&lt;br&gt;hadoop-senior02：　　resourcemanager　　datanode　　nodemanager&lt;br&gt;hadoop-senior03：　　secondarynamenode　　datanode　　nodemanager　　historyserver&lt;/p&gt;
-&lt;p&gt;###2.2 开始部署&lt;br&gt;（1）准备系统软件&lt;br&gt;　　Centos6.4     apache: hadoop   jdk&lt;br&gt;（2）准备系统环境&lt;/p&gt;
+&lt;h3 id=&quot;2-2-开始部署&quot;&gt;&lt;a href=&quot;#2-2-开始部署&quot; class=&quot;headerlink&quot; title=&quot;2.2 开始部署&quot;&gt;&lt;/a&gt;2.2 开始部署&lt;/h3&gt;&lt;p&gt;（1）准备系统软件&lt;br&gt;　　Centos6.4     apache: hadoop   jdk&lt;br&gt;（2）准备系统环境&lt;/p&gt;
 &lt;p&gt;(a)关闭selinux和防火墙　　(root)&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# vi /etc/sysconfig/selinux&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	SELINUX=disabled&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# chkconfig iptables off&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# service iptables stop&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;(b)固定主机名　　(root)&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# vi /etc/sysconfig/network&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	HOSTNAME=hadoop-senior    三台不一样&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;(c)添加hosts文件             (root)&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# vi /etc/hosts		&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	192.168.17.128          hadoop-senior &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	192.168.17.129          hadoop-senior02 &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	192.168.17.130          hadoop-senior03&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -114,8 +115,11 @@ $ ssh-copy-id xu@hadoop-senior03
     
     <summary type="html">
     
-      &lt;p&gt;##一、集群规划&lt;br&gt;    –需求&lt;br&gt;        -作业量（测试）　–基准测试　　–基本测试　  –ganglia  –cacti&lt;br&gt;        -容量　&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;*　选服务器（CPU/内存/磁盘）
+      &lt;h2 id=&quot;一、集群规划&quot;&gt;&lt;a href=&quot;#一、集群规划&quot; class=&quot;headerlink&quot; title=&quot;一、集群规划&quot;&gt;&lt;/a&gt;一、集群规划&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;--需求
+    -作业量（测试）　--基准测试　　--基本测试　  --ganglia  --cacti 
+    -容量　
+
+*　选服务器（CPU/内存/磁盘）
         CPU: 2核　[４核]　[８核]　16核==2 * 8核   
         内存:  16G  [32G]  64G 
         磁盘： 500G  1T  [2T] 　　 
